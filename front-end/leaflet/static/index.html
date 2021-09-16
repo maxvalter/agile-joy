@@ -3,7 +3,12 @@
 <head>
 <link rel="stylesheet" href="leaflet/leaflet.css" />
 <script src="leaflet/leaflet.js"></script>
+<script type="text/javascript" src="lan_3.0.geojson"></script>
+<!-- 
+not needed
 <script type="text/javascript" src="lan.geojson"></script>
+<script type="text/javascript" src="Lan_Sweref99TM.geo.json"></script>
+-->
 <style>
 html,body {height: 100%; margin: 0}
 #map      {width: 100%; height: 100%;}
@@ -39,25 +44,32 @@ html,body {height: 100%; margin: 0}
 var map = L.map('map').setView({lat: 63, lon: 16}, 5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
-attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
 }).addTo(map);
 
-L.control.scale({imperial: true, metric: true}).addTo(map);
+L.control.scale({imperial: false, metric: true}).addTo(map);
 
 L.marker({lat: 57.708870, lon: 11.9745600}).bindPopup('A plain marker...').addTo(map);
-    			var geojson = L.geoJson(lan, {
+
+/*   
+Simply:
+var geojson = L.geoJson(lan).addTo(map);
+
+Or:
+*/
+
+var geojson = L.geoJson(lan, {
 				fillOpacity: 0.2,
 				color: '#800026',
-//				opacity: 0.7,
-				weight: 2,
-//				dashArray: '1, 5',
+				opacity: 0.9,
+				weight: 1,
+				//dashArray: '1, 5',
 				onEachFeature(f, layer) {
-					layer.bindTooltip(f.properties.landskap, {sticky:true});
+					layer.bindTooltip(f.properties.LnNamn.concat(" Län"), {sticky:true});
 				},
 				attribution: '&copy; <a href="https://www.lantmateriet.se/sv/Kartor-och-geografisk-information/Kartor/oppna-data/anvandarvillkor/">Lantmäteriet, CC-BY 4.0</a>'
 			}).addTo(map);
-
 var legend = L.control({position: 'bottomright'});
 
 function getColor(d) {
@@ -86,6 +98,9 @@ legend.onAdd = function (map) {
 
     return div;
 };
+
+
+
 
 legend.addTo(map);
 
