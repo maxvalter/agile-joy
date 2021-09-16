@@ -1,1 +1,0 @@
-Go o gla kexchoklad
