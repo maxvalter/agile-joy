@@ -2,7 +2,7 @@
 ./static/leaflet
 Leaflet library https://leafletjs.com/
 
-./leaflet.zip
+./resources/leaflet.zip
 Leaflet 1.7.1
 
 ./static/lan.geojson
