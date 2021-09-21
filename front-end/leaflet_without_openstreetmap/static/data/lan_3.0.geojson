@@ -1,4 +1,4 @@
-lan = {
+geojson_data = {
 "type": "FeatureCollection",
 "name": "lan_3",
 "features": [
