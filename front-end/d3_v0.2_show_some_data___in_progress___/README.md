@@ -2,6 +2,9 @@ This example is using D3
 https://d3js.org
 https://github.com/d3
 
+and modified example code from https://www.d3indepth.com
+
+
 ./resources/get_Folkhalsomyndigheten_Covid19_latest.sh
 Gets the latest data from https://github.com/codler/sweden-coronavirus and
 converts it to a CSV file.
