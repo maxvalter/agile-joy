@@ -1,0 +1,22 @@
+{
+  "name": "statistik-karta",
+  "version": "0.0.1",
+  "description": "Karta över Sverige med statistik.",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a12l/agile-joy.git"
+  },
+  "author": "Team Joy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a12l/agile-joy/issues"
+  },
+  "homepage": "https://github.com/a12l/agile-joy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

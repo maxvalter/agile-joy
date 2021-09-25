@@ -1,4 +1,3 @@
-
 # what do I want to learn or understand better?
 
 The project is not completely defined.
