@@ -11,12 +11,8 @@
     "url": "git+https://github.com/a12l/agile-joy.git"
   },
   "author": "Team Joy",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/a12l/agile-joy/issues"
   },
-  "homepage": "https://github.com/a12l/agile-joy#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/a12l/agile-joy#readme"
 }
