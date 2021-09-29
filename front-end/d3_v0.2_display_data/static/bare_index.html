@@ -1,0 +1,168 @@
+<!--
+    this code is partly based on examples from https://observablehq.com/@d3
+    map data source based on: Öppna data, Lantmäteriet
+    covid data source: - https://github.com/codler/sweden-coronavirus
+                       - Folkhalsomyndigheten
+-->
+
+<html lang="en">
+
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {margin: 10px; background: #444; font: 1.2em sans-serif}
+        svg {background: #444}
+        .lan {letter-spacing:-0.06em; font-size:1.5em; font-weight:bold;
+            float:left; width:100%}
+        .datum {font-size:0.9em; font-weight:lighter; float:left}
+        .data_div {width: 20em; height: 30em; margin: -20em 0 0 20em;
+                   color: #fff}
+        /* .map path {stroke: #000; stroke-width: 1px} */
+    </style>
+</head>
+
+<body>
+
+<svg width="320px" height="500px">
+  <g class="map"></g>
+</svg>
+
+<div class="data_div"></div>
+
+<script>
+
+    let geojson;
+    let covid_data;
+    let proj;
+    let d_format = d3.timeFormat("%d %B %Y");
+    let d_parse = d3.timeParse("%m-%d-%y");
+    let geoGenerator = d3.geoPath().projection(proj);
+    var tmp_colour;
+    let t = d3.transition()
+        .duration(1000)
+        .ease(d3.easeLinear);
+
+    let state = {
+        type:       'Mercator',
+        scale:      900,
+        translateX: 170,
+        translateY: 250,
+        centerLon:  15,
+        centerLat:  63
+    }
+
+    function handle_mouseover(a, geojson_data) {
+
+        let lan_name = geojson_data.properties.LnNamn;
+        let lan_kod = geojson_data.properties.LnKod;
+        let data_datum = d_format(d_parse(covid_data.Datum));
+        let lan_cases = covid_data[lan_name];
+        let total_cases = covid_data.Total;
+
+        d3.select(".data_div")
+                .html(
+                      "<div class=\"datum\">" + data_datum + "</div>" +
+                      "<div class=\"lan\">" + lan_name +" län</div>" +
+                      "<br/>" +
+                      "Sjukdomsfall: " + lan_cases +
+                      "<br/>" +
+                      "Sverige totalt: " + total_cases
+                      )
+
+        var this_path = d3.select(this);
+
+        tmp_colour = this_path.attr("fill");
+
+        this_path
+            .attr("fill", "#f00")
+    }
+
+    function handle_mouseout(d) {
+        d3.select(this)
+            .attr("fill", tmp_colour)
+    }
+
+    function clickable() {
+        d3.selectAll("path").on("mouseover", handle_mouseover);
+        d3.selectAll("path").on("mouseout", handle_mouseout);
+    }
+
+    function update() {
+        proj = d3.geoMercator()
+        geoGenerator.projection(proj)
+
+        proj.scale(state.scale)
+            .translate([state.translateX, state.translateY])
+            .center([state.centerLon, state.centerLat])
+
+        // Update world map
+        let u = d3.select('g.map')
+            .selectAll('path')
+            .data(geojson.features)
+            /* draw only one Län, for example:
+               .data([geojson.features[0]]) */
+
+        let div = d3.select('div.data_div')
+            .data('covid_data', );
+
+        function col(){return d3.randomInt(0,256)()}
+
+        var random_col = f => {return "rgb(" + col() + ","
+                                             + col() + ","
+                                             + col() + ")"}
+        u.enter()
+            .append('path')
+            .merge(u)
+            .attr("fill", "#eee")
+            .transition(t)
+            .attr("fill", random_col)
+            .attr('d', geoGenerator)
+
+    }
+
+//        d3.selectAll("path").on("mouseover", handle_mouseover);
+//                    vj.on("mouseout", function(event) {
+//                d3.select(this)
+//                    .style("stroke", "#000")
+//                    .style("stroke-width", "1px")
+//                })
+
+    /* adjust CSV data to correspond to codes
+       in GeoJSON file data/lan_6.0.geojson: */
+    d3.csv('https://raw.githubusercontent.com/Knogds/agile-joy/main/front-end/d3_v0.2_display_data/static/data/Folkhalsomyndigheten_Covid19_latest.csv',
+            (d => covid_data = {
+                Datum: d.Statistikdatum,
+                Total: d.Totalt_antal_fall,
+                Stockholms: d.Stockholm,
+                Uppsala: d.Uppsala,
+                Södermanlands: d.Sörmland,
+                Östergötlands: d.Östergötland,
+                Jönköpings: d.Jönköping,
+                Kronobergs: d.Kronoberg,
+                Kalmar: d.Kalmar,
+                Gotlands: d.Gotland,
+                Blekinge: d.Blekinge,
+                Hallands: d.Halland,
+                Skåne: d.Skåne,
+                "Västra Götalands": d.Västra_Götaland,
+                Värmlands: d.Värmland,
+                Örebro: d.Örebro,
+                Västmanlands: d.Västmanland,
+                Dalarnas: d.Dalarna,
+                Gävleborgs: d.Gävleborg,
+                Västernorrlands: d.Västernorrland,
+                Jämtlands: d.Jämtland_Härjedalen,
+                Västerbottens: d.Västerbotten,
+                Norrbottens: d.Norrbotten
+            })
+       )
+
+
+    d3.json('https://raw.githubusercontent.com/Knogds/agile-joy/main/front-end/d3_v0.2_display_data/static/data/lan_6.0.geojson')
+        .then(d => { geojson = d })
+        .then(update)
+        .then(clickable)
+
+</script>
+</body>
+</html>

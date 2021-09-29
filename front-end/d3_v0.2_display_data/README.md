@@ -9,7 +9,9 @@ and modified example code from https://www.d3indepth.com
 Gets the latest data from https://github.com/codler/sweden-coronavirus and
 converts it to a CSV file.
 
-The map ./static/data/lan_5.0.geojson is converted using qgis, layer import,
+The map ./static/data/lan_6.0.geojson is converted using qgis, layer import,
 then export layer as GeoJSON with option RFC7946 enabled. The original file
 used was ./resources/tab_svenska_210505.zip owned by Lantmäteriet.
 
+./static/bare_index.html
+without local access, using js, geoJSON, cvs data from github
