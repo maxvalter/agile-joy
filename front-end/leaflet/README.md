@@ -1,3 +1,6 @@
+Detta var en tidigare del av projektet som senare valdes att slopas.
+Detta ty vi hittade ett ett annat bibliotek och valde att arbeta vidare med det.
+
 
 ./static/leaflet
 Leaflet library https://leafletjs.com/
