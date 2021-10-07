@@ -415,7 +415,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -495,7 +495,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -619,7 +619,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "09",
-                "LnNamn": "Gotlands"
+                "LnNamn": "Gotlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -947,7 +947,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -2803,7 +2803,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -4155,7 +4155,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -5367,7 +5367,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6243,7 +6243,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6727,7 +6727,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6951,7 +6951,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -7087,7 +7087,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -8727,7 +8727,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10027,7 +10027,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10879,7 +10879,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -11387,7 +11387,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -11979,7 +11979,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12303,7 +12303,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12619,7 +12619,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -14207,7 +14207,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -14839,7 +14839,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -15523,7 +15523,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",

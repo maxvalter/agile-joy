@@ -27,10 +27,16 @@
 
 <div class="data_div"></div>
 
+<select name="Välj åldersgrupp" id="ageselect">
+    <option value="">Välj åldersgrupp</option>
+    <option value="18-19 år">18-19 år</option>
+
+  </select>
+
 <script>
 
     let geojson;
-    let covid_data;
+    let covid_data = {};
     let proj;
     let d_format = d3.timeFormat("%d %B %Y");
     let d_parse = d3.timeParse("%m-%d-%y");
@@ -72,18 +78,14 @@
 
         let lan_name = geojson_data.properties.LnNamn;
         let lan_kod = geojson_data.properties.LnKod;
-        let data_datum = d_format(d_parse(covid_data.Datum));
         let lan_cases = covid_data[lan_name];
-        let total_cases = covid_data.Total;
 
         d3.select(".data_div")
             .html(
-                  "<div class=\"datum\">" + data_datum + "</div>" +
                   "<div class=\"lan\">" + lan_name + " län</div>" +
                   "<br/>" +
                   "Sjukdomsfall: " + lan_cases +
-                  "<br/>" +
-                  "Sverige totalt: " + total_cases
+                  "<br/>"
                  )
 
         var this_path = d3.select(this);
@@ -126,38 +128,31 @@
 
     /* adjust CSV data to correspond to codes
        in GeoJSON file data/lan_7.0.geojson: */
-    d3.csv('data/Folkhalsomyndigheten_Covid19_latest.csv',
-            (d => covid_data = {
-                Datum: d.Statistikdatum,
-                Total: d.Totalt_antal_fall,
-                Blekinge: d.Blekinge,
-                Dalarnas: d.Dalarna,
-                Gotlands: d.Gotland,
-                Gävleborgs: d.Gävleborg,
-                Hallands: d.Halland,
-                Jämtlands: d.Jämtland_Härjedalen,
-                Jönköpings: d.Jönköping,
-                Kalmar: d.Kalmar,
-                Kronobergs: d.Kronoberg,
-                Norrbottens: d.Norrbotten,
-                Skåne: d.Skåne,
-                Stockholms: d.Stockholm,
-                Södermanlands: d.Sörmland,
-                Uppsala: d.Uppsala,
-                Värmlands: d.Värmland,
-                Västerbottens: d.Västerbotten,
-                Västernorrlands: d.Västernorrland,
-                Västmanlands: d.Västmanland,
-                "Västra Götalands": d.Västra_Götaland,
-                Örebro: d.Örebro,
-                Östergötlands: d.Östergötland
-            })
-       )
+    path = 'data/agedata.csv';
+
+    d3.dsv(';', path).then(function(data) {
+        let temp = {};
+        for (let i = 0; i < data.length; i++) {
+        covid_data[data[i].län] = data[i]['18-19 år'];
+
+        }
+        //covid_data['18-19 år'] = temp;
+        console.log(covid_data);
+        //console.log(covid_data['18-19 år']['Stockholms län']);
+        
+    });
+
 
     d3.json('data/lan_7.0.geojson')
         .then(d => { geojson = d })
         .then(update)
         .then(clickable)
+
+    const selectElement = document.getElementById('ageselect')
+
+    selectElement.addEventListener('change', (event) => {
+        console.log("coviddata[event.target.value]")
+        });
 
 </script>
 </body>
