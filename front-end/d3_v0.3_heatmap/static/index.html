@@ -30,6 +30,23 @@
 <select name="Välj åldersgrupp" id="ageselect">
     <option value="">Välj åldersgrupp</option>
     <option value="18-19 år">18-19 år</option>
+    <option value="20-24 år">20-24 år</option>
+    <option value="25-29 år">25-29 år</option>
+    <option value="30-34 år">30-34 år</option>
+    <option value="35-39 år">35-39 år</option>
+    <option value="40-44 år">40-44 år</option>
+    <option value="45-49 år">45-49 år</option>
+    <option value="50-54 år">50-54 år</option>
+    <option value="55-59 år">55-59 år</option>
+    <option value="60-64 år">60-64 år</option>
+    <option value="65-69 år">65-69 år</option>
+    <option value="70-74 år">70-74 år</option>
+    <option value="75-79 år">75-79 år</option>
+    <option value="80-84 år">80-84 år</option>
+    <option value="85-89 år">85-89 år</option>
+    <option value="90-94 år">90-94 år</option>
+    <option value="95-99 år">95-99 år</option>
+    <option value="100+ år">100+ år</option>
 
   </select>
 
@@ -41,6 +58,9 @@
     let d_format = d3.timeFormat("%d %B %Y");
     let d_parse = d3.timeParse("%m-%d-%y");
     let geoGenerator = d3.geoPath().projection(proj);
+    let agespan;
+    let minmax;
+
     var tmp_colour;
 
     let t = d3.transition()
@@ -59,12 +79,28 @@
     function find_min_max(obj, offset){
         var min = Number.POSITIVE_INFINITY;
         var max = Number.NEGATIVE_INFINITY;
-        var cnt=0;
+        console.log(obj);
         for(const i in obj){
-            if(cnt++>offset){
-                var tmp = parseInt(obj[i]);
-                if(tmp < min) min = tmp;
-                if(tmp > max) max = tmp;
+            var county = i;
+            var cnt=0;
+            for(const j in obj[i]) {
+                if (cnt > offset) {
+                    var ages = j;
+                    var tmp = obj[county][ages];
+                    console.log(tmp);
+
+                    if (tmp < min) {
+                        min = tmp;
+                        console.log("New min");
+                        console.log(county, ages);
+                    }
+                    if (tmp > max) {
+                        console.log("New max");
+                        console.log(county, ages);
+                        max = tmp;
+                    }
+                }
+                cnt++;
             }
         }
        return[min,max];
@@ -78,11 +114,11 @@
 
         let lan_name = geojson_data.properties.LnNamn;
         let lan_kod = geojson_data.properties.LnKod;
-        let lan_cases = covid_data[lan_name];
-
+        let lan_cases = covid_data[lan_name][agespan];
+        console.log(agespan);
         d3.select(".data_div")
             .html(
-                  "<div class=\"lan\">" + lan_name + " län</div>" +
+                  "<div class=\"lan\">" + lan_name + " </div>" +
                   "<br/>" +
                   "Sjukdomsfall: " + lan_cases +
                   "<br/>"
@@ -115,13 +151,13 @@
             .selectAll('path')
             .data(geojson.features)
 
-        let minmax = find_min_max(covid_data,1);
-
+        let minmax = find_min_max(covid_data,0);
+        console.log(minmax);
         u.enter()
            .append('path')
            .attr("fill", "#eee")
            .attr("fill", d =>
-                 heat_colour(minmax)(covid_data[d.properties.LnNamn]))
+                 heat_colour(minmax)(covid_data[d.properties.LnNamn][agespan]))
 // for debugging: .attr("fake", d=> console.log(d.properties.LnNamn))
            .attr('d', geoGenerator)
     }
@@ -130,18 +166,26 @@
        in GeoJSON file data/lan_7.0.geojson: */
     path = 'data/agedata.csv';
 
-    d3.dsv(';', path).then(function(data) {
-        let temp = {};
-        for (let i = 0; i < data.length; i++) {
-        covid_data[data[i].län] = data[i]['18-19 år'];
+    // function loadData(agespan) {
 
-        }
-        //covid_data['18-19 år'] = temp;
-        console.log(covid_data);
-        //console.log(covid_data['18-19 år']['Stockholms län']);
+
+    //     d3.dsv(';', path).then(function(data) {
+    //     for (let i = 0; i < data.length; i++) {
+    //         covid_data[data[i].län] = data[i][agespan];
+    //     }
+    //     //covid_data['18-19 år'] = temp;
+    //     //console.log(covid_data);
+    //     //console.log(covid_data['18-19 år']['Stockholms län']);
         
-    });
+    // });
+    // }
+    // loadData("20-24 år");
 
+    d3.dsv(';', path).then(function(data) {
+        for (let i = 0; i < data.length; i++) {
+            covid_data[data[i].län] = data[i]; 
+        }
+    });
 
     d3.json('data/lan_7.0.geojson')
         .then(d => { geojson = d })
@@ -151,7 +195,9 @@
     const selectElement = document.getElementById('ageselect')
 
     selectElement.addEventListener('change', (event) => {
-        console.log("coviddata[event.target.value]")
+        agespan = event.target.value;
+        console.log(agespan)
+        update();
         });
 
 </script>
