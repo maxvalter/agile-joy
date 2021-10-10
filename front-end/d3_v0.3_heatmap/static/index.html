@@ -28,11 +28,10 @@
 <div class="data_div"></div>
 
 <select name="Välj åldersgrupp" id="ageselect">
-    <option value="">Välj åldersgrupp</option>
     <option value="18-19 år">18-19 år</option>
     <option value="20-24 år">20-24 år</option>
     <option value="25-29 år">25-29 år</option>
-    <option value="30-34 år">30-34 år</option>
+    <option value="30-34 år", selected="selected">30-34 år</option>
     <option value="35-39 år">35-39 år</option>
     <option value="40-44 år">40-44 år</option>
     <option value="45-49 år">45-49 år</option>
@@ -58,7 +57,7 @@
     let d_format = d3.timeFormat("%d %B %Y");
     let d_parse = d3.timeParse("%m-%d-%y");
     let geoGenerator = d3.geoPath().projection(proj);
-    let agespan;
+    let agespan = '20-24 år';
     let minmax;
 
     var tmp_colour;
@@ -79,24 +78,19 @@
     function find_min_max(obj, offset){
         var min = Number.POSITIVE_INFINITY;
         var max = Number.NEGATIVE_INFINITY;
-        console.log(obj);
+
         for(const i in obj){
             var county = i;
             var cnt=0;
             for(const j in obj[i]) {
                 if (cnt > offset) {
                     var ages = j;
-                    var tmp = obj[county][ages];
-                    console.log(tmp);
-
+                    var tmp = parseInt(obj[county][ages]);                    
+                    
                     if (tmp < min) {
                         min = tmp;
-                        console.log("New min");
-                        console.log(county, ages);
                     }
-                    if (tmp > max) {
-                        console.log("New max");
-                        console.log(county, ages);
+                    else if (tmp > max) {
                         max = tmp;
                     }
                 }
@@ -115,7 +109,6 @@
         let lan_name = geojson_data.properties.LnNamn;
         let lan_kod = geojson_data.properties.LnKod;
         let lan_cases = covid_data[lan_name][agespan];
-        console.log(agespan);
         d3.select(".data_div")
             .html(
                   "<div class=\"lan\">" + lan_name + " </div>" +
@@ -151,35 +144,21 @@
             .selectAll('path')
             .data(geojson.features)
 
-        let minmax = find_min_max(covid_data,0);
-        console.log(minmax);
+        minmax = find_min_max(covid_data,0);
+        //console.log(minmax);
+
         u.enter()
            .append('path')
            .attr("fill", "#eee")
            .attr("fill", d =>
-                 heat_colour(minmax)(covid_data[d.properties.LnNamn][agespan]))
-// for debugging: .attr("fake", d=> console.log(d.properties.LnNamn))
+               heat_colour(minmax)(covid_data[d.properties.LnNamn][agespan]))
+       //     .attr("fake", d=> console.log(agespan))
            .attr('d', geoGenerator)
     }
 
     /* adjust CSV data to correspond to codes
        in GeoJSON file data/lan_7.0.geojson: */
     path = 'data/agedata.csv';
-
-    // function loadData(agespan) {
-
-
-    //     d3.dsv(';', path).then(function(data) {
-    //     for (let i = 0; i < data.length; i++) {
-    //         covid_data[data[i].län] = data[i][agespan];
-    //     }
-    //     //covid_data['18-19 år'] = temp;
-    //     //console.log(covid_data);
-    //     //console.log(covid_data['18-19 år']['Stockholms län']);
-        
-    // });
-    // }
-    // loadData("20-24 år");
 
     d3.dsv(';', path).then(function(data) {
         for (let i = 0; i < data.length; i++) {
