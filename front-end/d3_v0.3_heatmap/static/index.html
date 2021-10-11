@@ -27,14 +27,39 @@
 
 <div class="data_div"></div>
 
+<select name="Välj åldersgrupp" id="ageselect">
+    <option value="18-19 år">18-19 år</option>
+    <option value="20-24 år">20-24 år</option>
+    <option value="25-29 år">25-29 år</option>
+    <option value="30-34 år", selected="selected">30-34 år</option>
+    <option value="35-39 år">35-39 år</option>
+    <option value="40-44 år">40-44 år</option>
+    <option value="45-49 år">45-49 år</option>
+    <option value="50-54 år">50-54 år</option>
+    <option value="55-59 år">55-59 år</option>
+    <option value="60-64 år">60-64 år</option>
+    <option value="65-69 år">65-69 år</option>
+    <option value="70-74 år">70-74 år</option>
+    <option value="75-79 år">75-79 år</option>
+    <option value="80-84 år">80-84 år</option>
+    <option value="85-89 år">85-89 år</option>
+    <option value="90-94 år">90-94 år</option>
+    <option value="95-99 år">95-99 år</option>
+    <option value="100+ år">100+ år</option>
+
+  </select>
+
 <script>
 
     let geojson;
-    let covid_data;
+    let covid_data = {};
     let proj;
     let d_format = d3.timeFormat("%d %B %Y");
     let d_parse = d3.timeParse("%m-%d-%y");
     let geoGenerator = d3.geoPath().projection(proj);
+    let agespan = '20-24 år';
+    let minmax;
+
     var tmp_colour;
 
     let t = d3.transition()
@@ -53,12 +78,23 @@
     function find_min_max(obj, offset){
         var min = Number.POSITIVE_INFINITY;
         var max = Number.NEGATIVE_INFINITY;
-        var cnt=0;
+
         for(const i in obj){
-            if(cnt++>offset){
-                var tmp = parseInt(obj[i]);
-                if(tmp < min) min = tmp;
-                if(tmp > max) max = tmp;
+            var county = i;
+            var cnt=0;
+            for(const j in obj[i]) {
+                if (cnt > offset) {
+                    var ages = j;
+                    var tmp = parseInt(obj[county][ages]);                    
+                    
+                    if (tmp < min) {
+                        min = tmp;
+                    }
+                    else if (tmp > max) {
+                        max = tmp;
+                    }
+                }
+                cnt++;
             }
         }
        return[min,max];
@@ -72,18 +108,13 @@
 
         let lan_name = geojson_data.properties.LnNamn;
         let lan_kod = geojson_data.properties.LnKod;
-        let data_datum = d_format(d_parse(covid_data.Datum));
-        let lan_cases = covid_data[lan_name];
-        let total_cases = covid_data.Total;
-
+        let lan_cases = covid_data[lan_name][agespan];
         d3.select(".data_div")
             .html(
-                  "<div class=\"datum\">" + data_datum + "</div>" +
-                  "<div class=\"lan\">" + lan_name + " län</div>" +
+                  "<div class=\"lan\">" + lan_name + " </div>" +
                   "<br/>" +
                   "Sjukdomsfall: " + lan_cases +
-                  "<br/>" +
-                  "Sverige totalt: " + total_cases
+                  "<br/>"
                  )
 
         var this_path = d3.select(this);
@@ -113,51 +144,40 @@
             .selectAll('path')
             .data(geojson.features)
 
-        let minmax = find_min_max(covid_data,1);
+        minmax = find_min_max(covid_data,0);
+        //console.log(minmax);
 
         u.enter()
            .append('path')
            .attr("fill", "#eee")
            .attr("fill", d =>
-                 heat_colour(minmax)(covid_data[d.properties.LnNamn]))
-// for debugging: .attr("fake", d=> console.log(d.properties.LnNamn))
+               heat_colour(minmax)(covid_data[d.properties.LnNamn][agespan]))
+       //     .attr("fake", d=> console.log(agespan))
            .attr('d', geoGenerator)
     }
 
     /* adjust CSV data to correspond to codes
        in GeoJSON file data/lan_7.0.geojson: */
-    d3.csv('data/Folkhalsomyndigheten_Covid19_latest.csv',
-            (d => covid_data = {
-                Datum: d.Statistikdatum,
-                Total: d.Totalt_antal_fall,
-                Blekinge: d.Blekinge,
-                Dalarnas: d.Dalarna,
-                Gotlands: d.Gotland,
-                Gävleborgs: d.Gävleborg,
-                Hallands: d.Halland,
-                Jämtlands: d.Jämtland_Härjedalen,
-                Jönköpings: d.Jönköping,
-                Kalmar: d.Kalmar,
-                Kronobergs: d.Kronoberg,
-                Norrbottens: d.Norrbotten,
-                Skåne: d.Skåne,
-                Stockholms: d.Stockholm,
-                Södermanlands: d.Sörmland,
-                Uppsala: d.Uppsala,
-                Värmlands: d.Värmland,
-                Västerbottens: d.Västerbotten,
-                Västernorrlands: d.Västernorrland,
-                Västmanlands: d.Västmanland,
-                "Västra Götalands": d.Västra_Götaland,
-                Örebro: d.Örebro,
-                Östergötlands: d.Östergötland
-            })
-       )
+    path = 'data/agedata.csv';
+
+    d3.dsv(';', path).then(function(data) {
+        for (let i = 0; i < data.length; i++) {
+            covid_data[data[i].län] = data[i]; 
+        }
+    });
 
     d3.json('data/lan_7.0.geojson')
         .then(d => { geojson = d })
         .then(update)
         .then(clickable)
+
+    const selectElement = document.getElementById('ageselect')
+
+    selectElement.addEventListener('change', (event) => {
+        agespan = event.target.value;
+        console.log(agespan)
+        update();
+        });
 
 </script>
 </body>

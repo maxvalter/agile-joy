@@ -7,7 +7,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "21",
-                "LnNamn": "Gävleborgs"
+                "LnNamn": "Gävleborgs län"
             },
             "geometry": {
                 "type": "LineString",
@@ -415,7 +415,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -495,7 +495,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -619,7 +619,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "09",
-                "LnNamn": "Gotlands"
+                "LnNamn": "Gotlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -947,7 +947,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -2771,7 +2771,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -2803,7 +2803,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -3015,7 +3015,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -3275,7 +3275,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "25",
-                "LnNamn": "Norrbottens"
+                "LnNamn": "Norrbottens län"
             },
             "geometry": {
                 "type": "LineString",
@@ -4155,7 +4155,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -4231,7 +4231,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "12",
-                "LnNamn": "Skåne"
+                "LnNamn": "Skåne län"
             },
             "geometry": {
                 "type": "LineString",
@@ -4847,7 +4847,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "23",
-                "LnNamn": "Jämtlands"
+                "LnNamn": "Jämtlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -5367,7 +5367,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -5431,7 +5431,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "07",
-                "LnNamn": "Kronobergs"
+                "LnNamn": "Kronobergs län"
             },
             "geometry": {
                 "type": "LineString",
@@ -5915,7 +5915,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "19",
-                "LnNamn": "Västmanlands"
+                "LnNamn": "Västmanlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6243,7 +6243,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6323,7 +6323,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "04",
-                "LnNamn": "Södermanlands"
+                "LnNamn": "Södermanlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6727,7 +6727,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6923,7 +6923,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -6951,7 +6951,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -7007,7 +7007,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -7087,7 +7087,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -7207,7 +7207,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -8495,7 +8495,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "08",
-                "LnNamn": "Kalmar"
+                "LnNamn": "Kalmar län"
             },
             "geometry": {
                 "type": "LineString",
@@ -8727,7 +8727,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -8907,7 +8907,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "06",
-                "LnNamn": "Jönköpings"
+                "LnNamn": "Jönköpings län"
             },
             "geometry": {
                 "type": "LineString",
@@ -9503,7 +9503,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "24",
-                "LnNamn": "Västerbottens"
+                "LnNamn": "Västerbottens län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10027,7 +10027,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10099,7 +10099,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "10",
-                "LnNamn": "Blekinge"
+                "LnNamn": "Blekinge län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10419,7 +10419,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "22",
-                "LnNamn": "Västernorrlands"
+                "LnNamn": "Västernorrlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10879,7 +10879,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -10979,7 +10979,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "18",
-                "LnNamn": "Örebro"
+                "LnNamn": "Örebro län"
             },
             "geometry": {
                 "type": "LineString",
@@ -11387,7 +11387,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -11535,7 +11535,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "03",
-                "LnNamn": "Uppsala"
+                "LnNamn": "Uppsala län"
             },
             "geometry": {
                 "type": "LineString",
@@ -11979,7 +11979,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12263,7 +12263,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12303,7 +12303,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12419,7 +12419,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12619,7 +12619,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -12675,7 +12675,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "13",
-                "LnNamn": "Hallands"
+                "LnNamn": "Hallands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -13195,7 +13195,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "08",
-                "LnNamn": "Kalmar"
+                "LnNamn": "Kalmar län"
             },
             "geometry": {
                 "type": "LineString",
@@ -13735,7 +13735,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "20",
-                "LnNamn": "Dalarnas"
+                "LnNamn": "Dalarnas län"
             },
             "geometry": {
                 "type": "LineString",
@@ -14207,7 +14207,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -14311,7 +14311,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "05",
-                "LnNamn": "Östergötlands"
+                "LnNamn": "Östergötlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -14839,7 +14839,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -15011,7 +15011,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "17",
-                "LnNamn": "Värmlands"
+                "LnNamn": "Värmlands län"
             },
             "geometry": {
                 "type": "LineString",
@@ -15523,7 +15523,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "01",
-                "LnNamn": "Stockholms"
+                "LnNamn": "Stockholms län"
             },
             "geometry": {
                 "type": "LineString",
@@ -15587,7 +15587,7 @@
             "type": "Feature",
             "properties": {
                 "LnKod": "14",
-                "LnNamn": "Västra Götalands"
+                "LnNamn": "Västra Götalands län"
             },
             "geometry": {
                 "type": "LineString",
