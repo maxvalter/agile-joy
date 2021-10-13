@@ -1,0 +1,50 @@
+
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="js/d3.v7.min.js"></script>
+        <script type="text/javascript" src="js/draw_map.js"></script>
+        <script type="text/javascript" src="js/add_legend.js"></script>
+        <script type="text/javascript" src="js/add_table.js"></script>
+        <script type="text/javascript" src="js/mouse_events.js"></script>
+        <script type="text/javascript" src="js/import_agedata.js"></script>
+        <script type="text/javascript" src="js/import_geojson.js"></script>
+        <link rel="stylesheet" href="css/mainstyle.css">
+        <link rel="stylesheet" href="css/table.css">
+    </head>
+<body>
+
+<div style="width:100%;float:left">
+<select name="Välj åldersgrupp" id="ageselect">
+    <option value="18-19 år">18-19 år</option>
+    <option value="20-24 år">20-24 år</option>
+    <option value="25-29 år">25-29 år</option>
+    <option value="30-34 år" selected>30-34 år</option>
+    <option value="35-39 år">35-39 år</option>
+    <option value="40-44 år">40-44 år</option>
+    <option value="45-49 år">45-49 år</option>
+    <option value="50-54 år">50-54 år</option>
+    <option value="55-59 år">55-59 år</option>
+    <option value="60-64 år">60-64 år</option>
+    <option value="65-69 år">65-69 år</option>
+    <option value="70-74 år">70-74 år</option>
+    <option value="75-79 år">75-79 år</option>
+    <option value="80-84 år">80-84 år</option>
+    <option value="85-89 år">85-89 år</option>
+    <option value="90-94 år">90-94 år</option>
+    <option value="95-99 år">95-99 år</option>
+    <option value="100+ år">100+ år</option>
+</select>
+</div>
+
+<svg width="320px" height="500px">
+    <g class="map"></g>
+</svg>
+
+<div id="data_div"></div>
+
+<div id="legend"></div>
+
+<div id="table"></div>
+
+</body>
+</html>
