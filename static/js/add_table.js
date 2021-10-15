@@ -1,6 +1,5 @@
 
 function add_table(data, append_to) {
-    {
         var columns = data.columns;
 
         d3.select(append_to)
@@ -25,5 +24,5 @@ function add_table(data, append_to) {
             .data(d => Object.values(d))
             .enter().append("td")
             .text(d => d);
-    }
-};
+}
+
