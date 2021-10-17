@@ -22,14 +22,14 @@ För att vi ska ha möjligt att jämnföra olika veckor mot varandra representer
 I tabellen nedan står det uppspaltat hur mycket vi estimerade vi skulle hinna, hur mycket vi hann, och vad skillnaden är för att göra det tydligt.
 
 | Sprint | Estimated veclocity | Actual velocity | Difference (estimated - actual) |
-|---|
-1 |  15 | 11 | 4 |
-2 | 7 | 7 | 0 |
-3 | 9 | 8 | 1 |
-4 | 8 |5  | 3|
-5 | 12 | 10 | 2
-6 | 29 | 0 | 29
-7 | | | 
+| ------ | ------------------- | --------------- | ------------------------------- |
+| 1      | 15                  | 11              | 4                               |
+| 2      | 7                   | 7               | 0                               |
+| 3      | 9                   | 8               | 1                               |
+| 4      | 8                   | 5               | 3                               |
+| 5      | 12                  | 10              | 2                               |
+| 6      | 29                  | 0               | 29                              |
+| 7      |                     |                 |                                 |
 
 ## Backlog finishable with current actual velocity
 
@@ -46,12 +46,12 @@ Syftet med denna KPI är att hålla koll på hur mycket värde vi levererar till
 Det kan sedan ligga till grund för reflektion för gruppen.
 Ett lägre värde behöver inte nödvändigtvis vara dåligt, då man till exempel kan utföra arbete som möjliggör att öka antalet UVPs man levererar i framtida sprints.
 
- Sprint | User value points 
-|---|
-1 | 6
-2 |1
-3 |9
-4 |4
-5 |4
-6 |
-7 |
+| Sprint | User value points |
+| ------ | ----------------- |
+| 1      | 6                 |
+| 2      | 1                 |
+| 3      | 9                 |
+| 4      | 4                 |
+| 5      | 4                 |
+| 6      |                   |
+| 7      |                   |
