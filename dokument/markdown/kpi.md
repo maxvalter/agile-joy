@@ -10,12 +10,12 @@ Vi estimerar våra user stories genom tröjstorlekar, vilket Håkan tipsade om p
 För att vi ska ha möjligt att jämnföra olika veckor mot varandra representerar vi de olika tröjstorlekarna med ett värde från 1 till och med 5.
 
 | Tröjstorlek | Värde |
-|---|
-Extra small | 1
-Small | 2
-Medium | 3
-Large | 4
-Extra large | 5
+| ----------- | ----- |
+| Extra small | 1     |
+| Small       | 2     |
+| Medium      | 3     |
+| Large       | 4     |
+| Extra large | 5     |
 
 
 
