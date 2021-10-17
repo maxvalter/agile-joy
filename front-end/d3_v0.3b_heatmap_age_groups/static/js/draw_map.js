@@ -19,7 +19,7 @@ function update() {
 
     /* [min,max] "agespan" values
        for all counties */
-    var minmax = d3.extent(get_age_data_by_age_group(agespan));
+    var minmax = d3.extent(get_age_data_by_age_group_per_capita(agespan));
 
     console.log("updating agespan: " + agespan)
 
@@ -38,7 +38,7 @@ function update() {
        .append('path')
        .attr("fill", "#eee")
        .attr("fill", d => heat_colour(minmax)
-            (get_age_data_by_age_group_and_county(d.properties.LnNamn,
+            (get_age_data_by_age_group_and_county_per_capita(d.properties.LnNamn,
                                                   agespan)))
        .attr('d', geoGenerator)
 

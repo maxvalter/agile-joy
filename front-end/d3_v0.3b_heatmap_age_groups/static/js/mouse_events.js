@@ -5,11 +5,20 @@ function handle_mouseover(a, geojson_data) {
     let lan_name = geojson_data.properties.LnNamn;
     let lan_kod = geojson_data.properties.LnKod;
     let lan_cases = get_age_data_by_age_group_and_county(lan_name, agespan);
+    let lan_population = get_population_data_by_age_group_and_county(lan_name, agespan);
+    let ratio = get_age_data_by_age_group_and_county_per_capita(lan_name, agespan);
+
     d3.select("#data_div")
         .html(
               "<div class=\"lan\">" + lan_name + " </div>" +
               "<br/>" +
               "Sjukdomsfall: " + lan_cases +
+              "<br/>"
+              + "<br/>" +
+              "Befolkning: " + lan_population +
+              "<br/>"
+              + "<br/>" +
+              "ratio: " + ratio +
               "<br/>"
              )
     var this_path = d3.select(this);
