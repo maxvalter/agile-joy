@@ -1,0 +1,105 @@
+\documentclass[9pt]{article}
+\usepackage{a4wide}
+\usepackage[swedish]{babel}
+\usepackage{graphicx}               %for graphics
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{eurosym}                %for euro sign \euro
+\usepackage{parskip}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{xspace}                 %for normal spacing behind commands
+\usepackage[utf8]{inputenc}         %so that we can use ë and ä and all those nice letters
+\usepackage{fancyhdr}               %for fancy headers!
+
+\newcounter{apcount}
+\newcommand{\ap}{\stepcounter{apcount}\textbf{Action Point \arabic{apcount}:}\xspace}
+
+%Gruppmedlemmar
+\newcommand{\Waser}{Erik Waser\xspace}
+\newcommand{\Slaget}{Albin Otterhäll\xspace}
+\newcommand{\Max}{Max Adolfsson\xspace}
+\newcommand{\Kim}{Michael Hägg\xspace} 
+\newcommand{\Algen}{Filip Lindset\xspace}
+\newcommand{\Kres}{Kresimir Popovic\xspace}
+
+%for Vincent:
+\newcommand{\oktober}{October\xspace}
+
+%change these variables
+\newcommand{\datum}{15/10 2021} %fill in the date
+\newcommand{\notulen}{Protokoll \datum \xspace}
+%vul voor n het nummer in
+
+\pagestyle{fancy}
+\lhead{\notulen}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+
+\begin{document}
+\begin{center}
+    \Large{\textbf{Grupp Joy Möte}}\\
+    \normalsize
+    \datum \\ %Sekreterare: %YOUR NAME
+\end{center}
+
+\begin{description} %fill in who is present and mention who needs to make the minutes.
+  \item [Närvarande:] \Waser, \Slaget, \Kim, \Kres
+  \item [Frånvarande:]  \Algen, \Max
+
+\end{description}
+
+\section{Mötet öppnas}
+
+\section{Runda bordet}
+
+\section{Fastslå föredragningslista}
+
+\section{Förra veckan}
+\textbf{\Waser} team reflection \\
+\textbf{\Slaget} Satt upp så att vi har en server. Vi kan köra applikationen även utanför vscode installerat en kodstilsstandard.\\
+\textbf{\Kim} Jobbat med tabellen\\
+\textbf{\Algen}\\
+\textbf{\Max}\\
+\textbf{\Kres} Har delat upp koden till mindre delar och strukturerat upp den till olika filer.\\
+
+\subsection{reflection}
+
+\section{Kommande vecka}
+\subsection{KPI}
+\Slaget ska titta på att lägga upp en md fil med de KPIer som är valda hittils
+
+\Waser och \Kim sätter user-points på user stories så att \Slaget kan skriva klart den sista KPIn.
+
+\subsection{User stories}
+
+\section{Nästa möte}
+\textbf{När?} \\ 9:30 måndag 18/10
+\textbf{Var?} \\ Distans
+
+\section{Övriga frågor}
+Kommentarer 
+
+Början av nästa vecka går till förberedelse på redovisning
+
+\section{Mötet avslutas}
+
+
+\appendix
+\section{TODO}
+\begin{tabular}{| p{3cm} | p{7.5cm} | p{3cm}|}
+  \hline
+  \textbf{Vem?} & \textbf{Vad?} & \textbf{När?} \\ \hline
+  \textbf{} & \textbf{} & \textbf{} \\ \hline
+
+
+  \end{tabular}
+\section{Att ta upp nästa möte}
+
+\end{document} 
