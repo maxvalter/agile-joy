@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./run.js",
     "dev": "nodemon ./run.js",
-    "test": "standard"
+    "test": "standard",
+    "codefix": "standard --fix"
   },
   "author": "Group Joy",
   "dependencies": {
