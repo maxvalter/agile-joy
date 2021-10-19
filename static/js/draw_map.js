@@ -66,5 +66,5 @@ function update() {
       https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d */
        .attr('d', geoGenerator)
 
-//    add_legend("#legend");
+    spawn_legend("body", minmax);
 }
