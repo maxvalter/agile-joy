@@ -9,7 +9,6 @@ d3.json('data/lan_7.0.geojson')
     .then(update)
     .then(clickable);
 
-
 /* structure of the lan_7.0.geojson file:
 
     Object { type: "FeatureCollection", generator: "JOSM", features: (48) […] }
@@ -24,7 +23,6 @@ d3.json('data/lan_7.0.geojson')
 */
 
 /* returns the features of the selected object (look at the structure above) */
-
 function get_geojson_features(){
     return geojson.features;
 }
