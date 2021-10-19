@@ -11,7 +11,7 @@ let import_agedata =
 //     d3.dsv(';', '../../../data/befolkning.csv')
 //     .then(d => population_data = d);
 
-d3.dsv(';', '../../../data/befolkning1.csv').then(function(data) {
+d3.dsv(';', '/../../data/befolkning1.csv').then(function(data) {
     
     for (let i = 0; i < data.length; i++) {
         population_data[data[i].region] = data[i];

@@ -12,13 +12,13 @@ function handle_mouseover(a, geojson_data) {
         .html(
               "<div class=\"lan\">" + lan_name + " </div>" +
               "<br/>" +
-              "Sjukdomsfall: " + lan_cases +
+              "Antal vaccinerade: " + lan_cases +
               "<br/>"
               + "<br/>" +
               "Befolkning: " + lan_population +
               "<br/>"
               + "<br/>" +
-              "ratio: " + ratio +
+              "Antal vaccinerade per capita: " + ratio.toFixed(3)*100 + '%' +
               "<br/>"
              )
     var this_path = d3.select(this);
