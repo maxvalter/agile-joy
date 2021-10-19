@@ -1,4 +1,5 @@
 
+
 function add_table(data, append_to) {
         var columns = data.columns;
 
